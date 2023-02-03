@@ -34,22 +34,22 @@ function App() {
       }, [sortBy]);
  
       return (
+<>
+        <header>
+   
+       
+
+<br/><br/>
+
+
+
+
+      </header>
+
     <div className='App'>
-      <header>
-
-{/* Példák: */}
-
-{/* <Button
-onClick={() => setDarkTheme(!darkTheme)}
-></Button> */}
-{/* 
-<Button
-onClick={() => setDarkTheme(oldValue => !oldValue)}
-></Button> */}
-
-
-    
-        <TextField
+     
+<div className='left'>
+<TextField
         label="Search" variant="outlined"
           type='text'
       
@@ -59,11 +59,12 @@ onClick={() => setDarkTheme(oldValue => !oldValue)}
           }}
         />
 
-<br/><br/>
 
 <Populationslider countries={countries} setCountriesToRender={setCountriesToRender}/>
 
-        <Button
+
+
+<Button
           variant='contained'
           onClick={() => {
             sortBy === "asc" ? setSortBy("desc") : setSortBy("asc");
@@ -71,10 +72,11 @@ onClick={() => setDarkTheme(oldValue => !oldValue)}
         >
           Sort by {sortBy}
         </Button>
+</div>
 
-      </header>
+<div className='right'>
 
-      {(!countriesToRender ) ? ( <LoadingMask />)
+  {(!countriesToRender ) ? ( <LoadingMask />)
       
       : (countriesToRender.length === 0) ? ('Válassz másik értéket') :
       (countriesToRender) ?
@@ -86,8 +88,13 @@ onClick={() => setDarkTheme(oldValue => !oldValue)}
           .map((country, i) => <Country country={country} key={i} />))
        : 
          (null)}
+</div>
+
+
+    
       
     </div>
+    </>
   );
 }
 

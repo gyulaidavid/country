@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
+import "../App.css";
 
 function Country({ country }) {
   const [detailsShown, setDetailsShown] = useState(false);
@@ -12,7 +13,7 @@ function Country({ country }) {
     <div>
       <h1>{country.name.official}</h1>
 
-      <Button
+      <Button style={{justifyContent: 'center'}}
         variant='contained'
         onClick={() => setDetailsShown((oldValue) => !oldValue)}
       >
