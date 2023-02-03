@@ -10,7 +10,7 @@ function Country({ country }) {
   }
 
   return (
-    <div>
+    <div className="countries">
       <h1>{country.name.official}</h1>
 
       <Button style={{justifyContent: 'center'}}
