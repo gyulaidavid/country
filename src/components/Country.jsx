@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@mui/material";
+import { Button, Box, Typography } from "@mui/material";
 import "../App.css";
 
 function Country({ country }) {
@@ -10,10 +10,17 @@ function Country({ country }) {
   }
 
   return (
-    <div className="countries">
-      <h1>{country.name.official}</h1>
+    <div className='countries'>
+      <Box align='center'>
+        <Typography variant='h4'> {country.name.official}</Typography>
+        <Typography sx={{ mb: 1 }} variant='h6'>
+          {" "}
+          Capital: {country.capital}
+        </Typography>
+      </Box>
 
-      <Button style={{justifyContent: 'center'}}
+      <Button
+        style={{ justifyContent: "center" }}
         variant='contained'
         onClick={() => setDetailsShown((oldValue) => !oldValue)}
       >
@@ -21,12 +28,23 @@ function Country({ country }) {
       </Button>
       {detailsShown && (
         <>
-          <h2>Continent: {country.continents}</h2>
-          <h3>Subregion: {country.subregion}</h3>
-          <h3>Population: {formatNumber(country.population)}</h3>
-          <div>
-            <img src={country.flags.png} alt='{country.name.official}' />
-          </div>
+          <Box align='center'>
+            <Typography sx={{ my: 1 }} variant='h6'>
+              Continent: {country.continents}
+            </Typography>
+            <Typography sx={{ mb: 1 }} variant='h6'>
+              Subregion: {country.subregion}
+            </Typography>
+
+            <Typography sx={{ mb: 1 }} variant='h6'>
+              Population: {formatNumber(country.population)}
+            </Typography>
+          </Box>
+          <Box sx={{ boxShadow: 3, p: 1, m: 1 }}>
+            <div>
+              <img src={country.flags.png} alt='{country.name.official}' />
+            </div>
+          </Box>
         </>
       )}
     </div>
