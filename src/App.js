@@ -37,7 +37,7 @@ function App() {
     <>
       <header>
         <ul>
-          <li>országok zászlói köré árnyék, vagy keret</li>
+         
           <li>fejlécbe bejelentkezés icon</li>
         </ul>
       </header>
@@ -51,7 +51,7 @@ function App() {
             sx={{ mx: "auto" }}
           >
             <TextField
-              color='secondary'
+              
               label='Search'
               variant='outlined'
               type='text'
@@ -68,7 +68,7 @@ function App() {
             </Typography>
 
             <Populationslider
-              countries={countries}
+                         countries={countries}
               setCountriesToRender={setCountriesToRender}
               countriesToRender={countriesToRender}
             />
@@ -81,6 +81,7 @@ function App() {
             sx={{ mx: "auto" }}
           >
             <Button
+            sx={{backgroundColor: '#A7C7E7'}}
               variant='contained'
               onClick={() => {
                 sortBy === "asc" ? setSortBy("desc") : setSortBy("asc");

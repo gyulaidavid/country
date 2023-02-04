@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Button, Box, Typography } from "@mui/material";
+
 import "../App.css";
+import Favorite from "./Favorite";
 
 function Country({ country }) {
   const [detailsShown, setDetailsShown] = useState(false);
@@ -12,7 +14,18 @@ function Country({ country }) {
   return (
     <div className='countries'>
       <Box align='center'>
-        <Typography variant='h4'> {country.name.official}</Typography>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Typography variant='h4'> {country.name.official}</Typography>
+          <Favorite />
+        </Box>
+
         <Typography sx={{ mb: 1 }} variant='h6'>
           {" "}
           Capital: {country.capital}
@@ -20,6 +33,7 @@ function Country({ country }) {
       </Box>
 
       <Button
+        sx={{ backgroundColor: "#A7C7E7" }}
         style={{ justifyContent: "center" }}
         variant='contained'
         onClick={() => setDetailsShown((oldValue) => !oldValue)}

@@ -8,7 +8,7 @@ function Populationslider({
   setCountriesToRender,
   countriesToRender,
 }) {
-  const [population, setPopulation] = useState([0, 1502112000]);
+  const [population, setPopulation] = useState([0, 1402112000]);
 
   function formatNumber(num) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
@@ -33,9 +33,10 @@ function Populationslider({
     <>
       <Box sx={{ width: 400 }}>
         <Slider
+        sx={{color: '#A7C7E7'}}
           value={population}
           min={0}
-          max={1502112000}
+          max={1402112000}
           onChange={handleChangePopulation}
         />
 
