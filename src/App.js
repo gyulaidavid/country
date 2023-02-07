@@ -21,8 +21,6 @@ function App() {
       });
   }, []);
 
-  console.log(countries);
-
   useEffect(() => {
     sortBy === "asc"
       ? setCountriesToRender((oldValue) =>
@@ -106,9 +104,10 @@ function App() {
               )
 
               .map((country, i) => <Country country={country} key={i} />)
-          ) : null}
+              ) : null}
         </div>
       </div>
+      
     </>
   );
 }
