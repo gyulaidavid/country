@@ -21,6 +21,8 @@ function App() {
       });
   }, []);
 
+  console.log(countries);
+
   useEffect(() => {
     sortBy === "asc"
       ? setCountriesToRender((oldValue) =>
