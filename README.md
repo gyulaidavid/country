@@ -12,7 +12,7 @@ I would like to add:
 - Detailed page of the countries
 - Favorite page after login. 
 
-##Key Topics
+## Key Topics
 Framework: React
 
 #### HTML and CSS:
@@ -21,7 +21,7 @@ I utilize Flexbox to present the usage of it.
 #### React:
 Usage of Hooks and functions (map, filter, sort).
 
-####Material UI:
+#### Material UI:
 Site building and formatting.
 
 
