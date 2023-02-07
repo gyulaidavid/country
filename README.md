@@ -1,3 +1,31 @@
+# Introduction 
+
+I arrived at IT after a career change. ([LinkedIn](https://www.linkedin.com/in/gyulaidavid "LinkedIn")) This is *my first Pet project*, which I am constantly developing. The project contains HTML, CSS, JS and React. I am learning to structure my components and also focusing on clean coding. On the other hand, my intention was to implement the most popular approaches and best practices.
+
+Throughout this application you can arrange, filter the countries. You are also able to search the official name of a country and also filter by population. Click the “Show more” button to get more details.
+
+## Under construction :thinking: :
+This application is not ready yet. I am working on it continuously. 
+I would like to add:
+- Firebase authentication, database
+- React Router (favorite page)
+- Detailed page of the countries
+- Favorite page after login. 
+
+##Key Topics
+Framework: React
+
+#### HTML and CSS:
+I utilize Flexbox to present the usage of it.
+
+#### React:
+Usage of Hooks and functions (map, filter, sort).
+
+####Material UI:
+Site building and formatting.
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
