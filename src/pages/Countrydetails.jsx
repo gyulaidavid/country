@@ -8,7 +8,11 @@ const { id } = useParams
 
   
   return (
-    <div>Countrydetails {id}</div>
+  
+    <div>Countrydetails {id}
+         
+    </div>
+    
   )
 }
 
