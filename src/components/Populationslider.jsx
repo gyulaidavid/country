@@ -25,7 +25,7 @@ function Populationslider({
     let filterPopulation = countries.filter(
       (country) => country.population >= minPop && country.population <= maxPop
     );
-    console.log("slider find:", filterPopulation);
+   
     setCountriesToRender(filterPopulation);
   }, [population]);
 

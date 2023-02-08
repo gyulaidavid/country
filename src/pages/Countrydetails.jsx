@@ -1,8 +1,14 @@
 import React from 'react'
+import { useParams } from 'react-router-dom'
 
-function Countrydetails({setCountries, setCountriesToRender, countries, countriesToRender }) {
+function Countrydetails({setCountries, setCountriesToRender, countries, countriesToRender }){
+
+
+const { id } = useParams
+
+  
   return (
-    <div>{countries.name}</div>
+    <div>Countrydetails {id}</div>
   )
 }
 

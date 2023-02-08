@@ -41,10 +41,10 @@ function Header() {
                 aria-label='outlined primary button group'
               >
                 <Button sx={{ backgroundColor: "#A7C7E7" }}>
-                  <Link to='/'>Home</Link>
+                  <Link to="/">Home</Link>
                 </Button>
                 <Button sx={{ backgroundColor: "#A7C7E7" }}>
-                  <Link to='/about'>About</Link>
+                  <Link to="/about">About</Link>
                 </Button>
                 <Button sx={{ backgroundColor: "#A7C7E7" }}>???</Button>
               </ButtonGroup>

@@ -36,11 +36,20 @@ function App() {
               />
             }
           />
-          <Route path='/:name' element={<Countrydetails    countries={countries}
+          <Route
+            path='/:id'
+            element={
+              <Countrydetails
+                countries={countries}
                 setCountries={setCountries}
                 countriesToRender={countriesToRender}
-                setCountriesToRender={setCountriesToRender}/>} />
+                setCountriesToRender={setCountriesToRender}
+              />
+            }
+          />
+
           <Route path='/about' element={<About />} />
+
           <Route path='*' element={<Error />} />
         </Route>
       </Routes>
