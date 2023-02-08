@@ -1,6 +1,6 @@
 # Introduction 
 
-I arrived at IT after a career change. ([LinkedIn](https://www.linkedin.com/in/gyulaidavid "LinkedIn")) This is *my first Pet project*, which I am constantly developing. The project contains HTML, CSS, JS and React. I am learning to structure my components and also focusing on clean coding. On the other hand, my intention was to implement the most popular approaches and best practices.
+I arrived at IT-field after a career change. ([LinkedIn](https://www.linkedin.com/in/gyulaidavid "LinkedIn")) This is *my first Pet project*, which I am constantly developing. The project contains HTML, CSS, JS and React. I am learning to structure my components and also focusing on clean coding. On the other hand, my intention was to implement the most popular approaches and best practices.
 
 Throughout this application you can arrange, filter the countries. You are able to search the official name of a country and also filter by population. Click the “Show more” button to get more details.
 
