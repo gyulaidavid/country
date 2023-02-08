@@ -1,8 +1,9 @@
 import React from 'react'
+import Typography from "@mui/material/Typography";
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <Typography variant='h4'>Footer</Typography>
   )
 }
 

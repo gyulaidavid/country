@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Countrydetails() {
+function Countrydetails({setCountries, setCountriesToRender, countries, countriesToRender }) {
   return (
-    <div>Countrydetails</div>
+    <div>{countries.name}</div>
   )
 }
 
