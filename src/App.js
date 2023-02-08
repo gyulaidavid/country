@@ -5,6 +5,9 @@ import "./App.css";
 import Country from "./components/Country";
 import LoadingMask from "./components/LoadingMask";
 import Populationslider from "./components/Populationslider";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import About from "./pages/About";
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -35,12 +38,12 @@ function App() {
 
   return (
     <>
-      <header>
-        <ul>
-         
-          <li>fejlécbe bejelentkezés icon</li>
-        </ul>
-      </header>
+    
+
+      <Header />
+     
+
+{/* Left menu START      */}
 
       <div className='App'>
         <div className='left'>
@@ -51,7 +54,6 @@ function App() {
             sx={{ mx: "auto" }}
           >
             <TextField
-              
               label='Search'
               variant='outlined'
               type='text'
@@ -68,7 +70,7 @@ function App() {
             </Typography>
 
             <Populationslider
-                         countries={countries}
+              countries={countries}
               setCountriesToRender={setCountriesToRender}
               countriesToRender={countriesToRender}
             />
@@ -81,7 +83,7 @@ function App() {
             sx={{ mx: "auto" }}
           >
             <Button
-            sx={{backgroundColor: '#A7C7E7'}}
+              sx={{ backgroundColor: "#A7C7E7" }}
               variant='contained'
               onClick={() => {
                 sortBy === "asc" ? setSortBy("desc") : setSortBy("asc");
@@ -91,6 +93,8 @@ function App() {
             </Button>
           </Box>
         </div>
+
+{/* Right side content with countries START */}
 
         <div className='right'>
           {!countriesToRender ? (
@@ -106,10 +110,9 @@ function App() {
               )
 
               .map((country, i) => <Country country={country} key={i} />)
-              ) : null}
+          ) : null}
         </div>
       </div>
-      
     </>
   );
 }
