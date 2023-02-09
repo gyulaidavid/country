@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
-import Layout from "./components/Layout";
 import Main from "./pages/Main";
 import Countrydetails from "./pages/Countrydetails";
 import Error from "./pages/Error";
+import Layout from "./components/Layout";
 
 function App() {
   const [countries, setCountries] = useState([]);

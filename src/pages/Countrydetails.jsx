@@ -1,19 +1,20 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from "react";
+import { useParams } from "react-router-dom";
 
-function Countrydetails({setCountries, setCountriesToRender, countries, countriesToRender }){
+function Countrydetails({
+  setCountries,
+  setCountriesToRender,
+  countries,
+  countriesToRender,
+}) {
+  const { id } = useParams();
 
-
-const { id } = useParams
-
-  
   return (
-  
-    <div>Countrydetails {id}
-         
-    </div>
-    
-  )
+    <>
+      
+      <div>Countrydetails {id}</div>
+    </>
+  );
 }
 
-export default Countrydetails
+export default Countrydetails;

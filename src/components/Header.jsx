@@ -32,7 +32,7 @@ function Header() {
 
   return (
     <>
-      <Box>
+      <Box sx={{ p: 5 }}>
         <AppBar position='fixed' sx={{ backgroundColor: "#78A2CC" }}>
           <Toolbar>
             <Box sx={{ flexGrow: 1 }}>
