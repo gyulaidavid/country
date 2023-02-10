@@ -40,11 +40,17 @@ function Header() {
                 variant='contained'
                 aria-label='outlined primary button group'
               >
-                <Button sx={{ backgroundColor: "#A7C7E7" }}>
-                  <Link to="/">Home</Link>
+                <Button 
+                  component={Link}
+                  to={"/"}
+                  sx={{ backgroundColor: "#A7C7E7" }}>
+                  Home
                 </Button>
-                <Button sx={{ backgroundColor: "#A7C7E7" }}>
-                  <Link to="/about">About</Link>
+                <Button
+                  component={Link}
+                  to={"/about"}
+                  sx={{ backgroundColor: "#A7C7E7" }}>
+                 About
                 </Button>
                 <Button sx={{ backgroundColor: "#A7C7E7" }}>???</Button>
               </ButtonGroup>

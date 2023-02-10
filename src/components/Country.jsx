@@ -3,6 +3,7 @@ import { Button, Box, Typography } from "@mui/material";
 
 import "../App.css";
 import Favorite from "./Favorite";
+import { Link } from "react-router-dom";
 
 function Country({ country }) {
   const [detailsShown, setDetailsShown] = useState(false);
@@ -22,7 +23,9 @@ function Country({ country }) {
             justifyContent: "center",
           }}
         >
-          <Typography variant='h4'> {country.name.official}</Typography>
+          <Button component={Link} to={"/:id"}>
+            <Typography variant='h4'> {country.name.official}</Typography>
+          </Button>
           <Favorite />
         </Box>
 
