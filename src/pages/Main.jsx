@@ -3,6 +3,7 @@ import { Button, TextField, Typography, Box } from "@mui/material";
 import Populationslider from '../components/Populationslider';
 import LoadingMask from '../components/LoadingMask';
 import Country from '../components/Country';
+import Paginationcomponent from '../components/Paginationcomponent';
 
 
 function Main({setCountries, setCountriesToRender, countries, countriesToRender }) {
@@ -97,6 +98,9 @@ function Main({setCountries, setCountriesToRender, countries, countriesToRender 
         ) : null}
       </div>
     </div>
+    
+<Paginationcomponent/>
+
   </>
   )
 }

@@ -20,7 +20,16 @@ function Countrydetails({
 
   return (
     <>
-      <div>Countrydetails {id}</div>
+      <div>Countrydetails {id}
+      
+      {countries.map ((countryInfo, i) => (
+      
+        <h1>{countryInfo.name.official}</h1>
+
+
+      ))}
+      
+      </div>
     </>
   );
 }

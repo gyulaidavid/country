@@ -22,10 +22,12 @@ function App() {
       });
   }, []);
 
+ 
+
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Layout />}>
+        <Route path='/' element={<Layout countries={countries}/>}>
           <Route
             path='/'
             element={

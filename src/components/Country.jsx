@@ -12,7 +12,13 @@ function Country({ country }) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
   }
 
+//create new Array from object that allows map funciton  
+let countryArray = Object.entries(country)
+
+console.log(countryArray);
+
   return (
+    <>
     <div className='countries'>
       <Box align='center'>
         <Box
@@ -23,8 +29,12 @@ function Country({ country }) {
             justifyContent: "center",
           }}
         >
-          <Button component={Link} to={"/:id"}>
+          {/* {countryArray.map((citiy, i) =>( */}
+          <Button
+          // citiy={citiy.name.official}
+          component={Link} to={"/:id"}>
             <Typography variant='h4'> {country.name.official}</Typography>
+          {/* </Button>) )} */}
           </Button>
           <Favorite />
         </Box>
@@ -62,9 +72,14 @@ function Country({ country }) {
               <img src={country.flags.png} alt='{country.name.official}' />
             </div>
           </Box>
+
+          
         </>
       )}
+      
     </div>
+    
+    </>
   );
 }
 
