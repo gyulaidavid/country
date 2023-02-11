@@ -32,7 +32,7 @@ let countryArray = Object.entries(country)
           {/* {countryArray.map((citiy, i) =>( */}
           <Button
           // citiy={citiy.name.official}
-          component={Link} to={"/:id"}>
+          component={Link} to={`/${country.name.official}`}>
             <Typography variant='h4'> {country.name.official}</Typography>
           {/* </Button>) )} */}
           </Button>
