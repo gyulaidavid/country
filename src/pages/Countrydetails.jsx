@@ -17,15 +17,13 @@ console.log(countries);
             <div key={i}>
               <h1>{filterCountry.name.official}</h1>
               <h1>{filterCountry.capital}</h1>
-              <img src={filterCountry.coatOfArms.png} alt='' />
+              <img height={400} src={filterCountry.coatOfArms.png} alt='coat-of-arms' />
               <iframe 
               src={filterCountry.maps.googleMaps}
-              width={800} height={500}></iframe>
+             height={400} width={400} title='map'></iframe>
             </div>
           ))}
-        {/* {countries.map((countryInfo, i) => (
-          <h1>{countryInfo.name.official}</h1>
-        ))} */}
+      
       </div>
     </>
   );
