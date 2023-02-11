@@ -1,15 +1,17 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from "react";
 import { Button, TextField, Typography, Box } from "@mui/material";
-import Populationslider from '../components/Populationslider';
-import LoadingMask from '../components/LoadingMask';
-import Country from '../components/Country';
-import Paginationcomponent from '../components/Paginationcomponent';
+import Populationslider from "../components/Populationslider";
+import LoadingMask from "../components/LoadingMask";
+import Country from "../components/Country";
 
-
-function Main({setCountries, setCountriesToRender, countries, countriesToRender }) {
-    const [filter, setFilter] = useState("");
-    const [sortBy, setSortBy] = useState("asc");
-
+function Main({
+  setCountries,
+  setCountriesToRender,
+  countries,
+  countriesToRender,
+}) {
+  const [filter, setFilter] = useState("");
+  const [sortBy, setSortBy] = useState("asc");
 
   useEffect(() => {
     sortBy === "asc"
@@ -23,86 +25,78 @@ function Main({setCountries, setCountriesToRender, countries, countriesToRender 
 
   return (
     <>
-    
+      {/* Left menu START      */}
 
+      <div className='App'>
+        <div className='left'>
+          <Box
+            display='flex'
+            justifyContent='center'
+            alignItems='center'
+            sx={{ mx: "auto" }}
+          >
+            <TextField
+              label='Search'
+              variant='outlined'
+              type='text'
+              value={filter}
+              onChange={(event) => {
+                setFilter(event.target.value);
+              }}
+            />
+          </Box>
 
-   
+          <div className='pop-slider'>
+            <Typography variant='h6'>
+              Choose the range of the population:
+            </Typography>
 
-{/* Left menu START      */}
+            <Populationslider
+              countries={countries}
+              setCountriesToRender={setCountriesToRender}
+              countriesToRender={countriesToRender}
+            />
+          </div>
 
-    <div className='App'>
-      <div className='left'>
-        <Box
-          display='flex'
-          justifyContent='center'
-          alignItems='center'
-          sx={{ mx: "auto" }}
-        >
-          <TextField
-            label='Search'
-            variant='outlined'
-            type='text'
-            value={filter}
-            onChange={(event) => {
-              setFilter(event.target.value);
-            }}
-          />
-        </Box>
-
-        <div className='pop-slider'>
-          <Typography variant='h6'>
-            Choose the range of the population:
-          </Typography>
-
-          <Populationslider
-            countries={countries}
-            setCountriesToRender={setCountriesToRender}
-            countriesToRender={countriesToRender}
-          />
+          <Box
+            display='flex'
+            justifyContent='center'
+            alignItems='center'
+            sx={{ mx: "auto" }}
+          >
+            <Button
+              sx={{ backgroundColor: "#A7C7E7" }}
+              variant='contained'
+              onClick={() => {
+                sortBy === "asc" ? setSortBy("desc") : setSortBy("asc");
+              }}
+            >
+              Sort by population: {sortBy}
+            </Button>
+          </Box>
         </div>
 
-        <Box
-          display='flex'
-          justifyContent='center'
-          alignItems='center'
-          sx={{ mx: "auto" }}
-        >
-          <Button
-            sx={{ backgroundColor: "#A7C7E7" }}
-            variant='contained'
-            onClick={() => {
-              sortBy === "asc" ? setSortBy("desc") : setSortBy("asc");
-            }}
-          >
-            Sort by population: {sortBy}
-          </Button>
-        </Box>
+        {/* Right side content with countries START */}
+
+        <div className='right'>
+          {!countriesToRender ? (
+            <LoadingMask />
+          ) : countriesToRender.length === 0 ? (
+            <Typography variant='h3'>Please, Choose Other Values.</Typography>
+          ) : countriesToRender ? (
+            countriesToRender
+              .filter((country) =>
+                country.name.official
+                  .toLowerCase()
+                  .includes(filter.toLowerCase())
+              )
+
+              .map((country, i) => <Country country={country} key={i} />)
+          ) : null}
+        </div>
       </div>
-
-{/* Right side content with countries START */}
-
-      <div className='right'>
-        {!countriesToRender ? (
-          <LoadingMask />
-        ) : countriesToRender.length === 0 ? (
-          <Typography variant='h3'>Please, Choose Other Values.</Typography>
-        ) : countriesToRender ? (
-          countriesToRender
-            .filter((country) =>
-              country.name.official
-                .toLowerCase()
-                .includes(filter.toLowerCase())
-            )
-
-            .map((country, i) => <Country country={country} key={i} />)
-        ) : null}
-      </div>
-    </div>
-    
-<Paginationcomponent/>
-
-  </>
-  )
+    </>
+  );
 }
 
-export default Main
+export default Main;

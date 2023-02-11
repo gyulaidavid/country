@@ -9,14 +9,14 @@ function Countrydetails({
 }) {
   const { id } = useParams();
 
-  console.log(countries);
+  // console.log(countries);
 
   let foundId;
   if (countries.length > 0) {
     foundId = countries.find((country) => country.name.official === id);
   }
 
-  console.log(foundId);
+  // console.log(foundId);
 
   return (
     <>

@@ -15,7 +15,7 @@ function Country({ country }) {
 //create new Array from object that allows map funciton  
 let countryArray = Object.entries(country)
 
-console.log(countryArray);
+// console.log(countryArray);
 
   return (
     <>
