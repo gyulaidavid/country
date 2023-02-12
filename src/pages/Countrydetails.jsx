@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Favorite from "../components/Favorite";
-import { Box, Button, Typography, Modal } from "@mui/material";
+import { Box, Button, Typography, Modal, Tooltip } from "@mui/material";
 
 const style = {
   position: "absolute",
@@ -24,45 +24,60 @@ function Countrydetails({ countries }) {
 
   return (
     <>
-      <div>
-        <Favorite />
+      <Box sx={{ p: 1, display: "flex" }}>
         {countries
           .filter((filterCountry) => filterCountry.name.official === id)
           .map((filterCountry, i) => (
             <div key={i}>
-              <h1>{filterCountry.name.official}</h1>
-              <h1>{filterCountry.capital}</h1>
+              <Box sx={{ display: "flex", flexDirection: "row" }}>
+                <Typography variant='h3' sx={{ pb: 2 }}>
+                  Official name: {filterCountry.name.official}
+                </Typography>
 
-              <Button onClick={handleOpen}>
-                <img
-                  height={200}
-                  src={filterCountry.coatOfArms.png}
-                  alt='coat-of-arms'
-                />
-              </Button>
+                <Favorite />
+              </Box>
+              <Typography variant='h4' sx={{ pb: 2 }}>
+                Capital: {filterCountry.capital}
+              </Typography>
 
-              <Modal
-                open={open}
-                onClose={handleClose}
-                aria-labelledby='modal-modal-title'
-                aria-describedby='modal-modal-description'
-              >
-                <Box sx={style}>
-                  <Typography
-                    id='modal-modal-title'
-                    variant='h6'
-                    component='h2'
-                  >
+              {/* Coat-of-arms Start */}
+
+              <Box>
+                <Typography>Coat-of-arms:</Typography>
+                <Button onClick={handleOpen}>
+                  <Tooltip title='Click to enlarge image' placement='right'>
                     <img
-                      height={600}
+                      height={200}
                       src={filterCountry.coatOfArms.png}
-                      alt='coat-of-arms'
+                      alt='Click to enlarge image'
                     />
-                  </Typography>
-                </Box>
-              </Modal>
+                  </Tooltip>
+                </Button>
 
+                <Modal
+                  open={open}
+                  onClose={handleClose}
+                  aria-labelledby='modal-modal-title'
+                  aria-describedby='modal-modal-description'
+                >
+                  <Box sx={style}>
+                    <Typography
+                      id='modal-modal-title'
+                      variant='h6'
+                      component='h2'
+                    >
+                      <img
+                        height={600}
+                        src={filterCountry.coatOfArms.png}
+                        alt='coat-of-arms'
+                      />
+                    </Typography>
+                  </Box>
+                </Modal>
+              </Box>
               <iframe
+                http-equiv='X-Frame-Options'
+                content='sameorigin'
                 src={filterCountry.maps.googleMaps}
                 height={400}
                 width={400}
@@ -70,7 +85,7 @@ function Countrydetails({ countries }) {
               ></iframe>
             </div>
           ))}
-      </div>
+      </Box>
     </>
   );
 }

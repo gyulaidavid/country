@@ -80,7 +80,7 @@ function Main({
 
         <div className='right'>
           {!countriesToRender ? (
-            <LoadingMask />
+            <LoadingMask countries={countries}/>
           ) : countriesToRender.length === 0 ? (
             <Typography variant='h3'>Please, Choose Other Values.</Typography>
           ) : countriesToRender ? (
