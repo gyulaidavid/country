@@ -11,6 +11,8 @@ import Layout from "./components/Layout";
 function App() {
   const [countries, setCountries] = useState([]);
   const [countriesToRender, setCountriesToRender] = useState(0);
+  
+
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
@@ -20,6 +22,8 @@ function App() {
         setCountriesToRender(data);
       });
   }, []);
+
+
 
   return (
     <Router>

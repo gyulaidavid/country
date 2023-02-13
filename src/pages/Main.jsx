@@ -3,12 +3,13 @@ import { Button, TextField, Typography, Box } from "@mui/material";
 import Populationslider from "../components/Populationslider";
 import LoadingMask from "../components/LoadingMask";
 import Country from "../components/Country";
+import Selectregion from "../components/Selectregion";
 
 function Main({
-  setCountries,
   setCountriesToRender,
   countries,
   countriesToRender,
+  regions
 }) {
   const [filter, setFilter] = useState("");
   const [sortBy, setSortBy] = useState("asc");
@@ -74,15 +75,19 @@ function Main({
               Sort by population: {sortBy}
             </Button>
           </Box>
+
+          <Box sx={{ mx: "auto" }}>
+            <Selectregion />
+          </Box>
         </div>
 
         {/* Right side content with countries START */}
 
         <div className='right'>
           {!countriesToRender ? (
-            <LoadingMask countries={countries}/>
+            <LoadingMask countries={countries} />
           ) : countriesToRender.length === 0 ? (
-            <Typography variant='h3'>Please, Choose Other Values.</Typography>
+            <Typography variant='h4'>Please, Choose Other Values.</Typography>
           ) : countriesToRender ? (
             countriesToRender
               .filter((country) =>
@@ -92,7 +97,8 @@ function Main({
               )
 
               .map((country, i) => <Country country={country} key={i} />)
-          ) : null}
+          ) : (<Selectregion/>)
+          }
         </div>
       </div>
     </>

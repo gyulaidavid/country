@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import Favorite from "../components/Favorite";
 import { Box, Button, Typography, Modal, Tooltip } from "@mui/material";
@@ -20,7 +20,9 @@ function Countrydetails({ countries }) {
 
   const { id } = useParams();
 
-  console.log(countries);
+console.log();
+
+  // const filteredCountry = useMemo(() => countries.filter((filterCountry) => filterCountry.name.official === id), [countries, id])
 
   return (
     <>
@@ -53,7 +55,6 @@ function Countrydetails({ countries }) {
                     />
                   </Tooltip>
                 </Button>
-
                 <Modal
                   open={open}
                   onClose={handleClose}
@@ -66,18 +67,24 @@ function Countrydetails({ countries }) {
                       variant='h6'
                       component='h2'
                     >
-                      <img
-                        height={600}
-                        src={filterCountry.coatOfArms.png}
-                        alt='coat-of-arms'
-                      />
+                      {filterCountry.coatOfArms.length === 0 ? (
+                        "Nincs címer"
+                      ) : (
+                        <img
+                          height={600}
+                          src={filterCountry.coatOfArms.png}
+                          alt='coat-of-arms'
+                        />
+                        )}
                     </Typography>
                   </Box>
                 </Modal>
               </Box>
+                   
+
               <iframe
                 http-equiv='X-Frame-Options'
-                content='sameorigin'
+                content='CROSSORIGIN'
                 src={filterCountry.maps.googleMaps}
                 height={400}
                 width={400}
