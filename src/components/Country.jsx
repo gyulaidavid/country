@@ -31,7 +31,7 @@ function Country({ country }) {
             <Typography variant='h4'> {country.name.official}</Typography>
          
           </Button>
-          <Favorite />
+          <Favorite country={country}/>
         </Box>
 
         <Typography sx={{ mb: 1 }} variant='h6'>

@@ -68,7 +68,7 @@ console.log();
                       component='h2'
                     >
                       {filterCountry.coatOfArms.length === 0 ? (
-                        "Nincs címer"
+                        "Nincs címer" //Bouvet Island
                       ) : (
                         <img
                           height={600}
