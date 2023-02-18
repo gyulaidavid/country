@@ -36,11 +36,11 @@ export const addCountry = async (capital, country) => {
 
 export const deleteCountry = async (capital, country) => {
     try {
-      const docRef = await deleteDoc(collection(db, "countries"), {
+      const docDel = await deleteDoc(collection(db, "countries"), {
         capital,
-        country,
+        country
       });
-      console.log("Document deleted with ID: ", docRef.id);
+      console.log("Document deleted with ID: ", docDel.id);
     } catch (e) {
       console.error("Error adding document: ", e);
     }
