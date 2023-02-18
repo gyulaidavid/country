@@ -67,8 +67,8 @@ function Selectregion() {
         <Box sx={style}>
           <Typography variant="h5">{selectedRegion}</Typography>
           <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-             {regions.map((regio, i) => (
-              <Box key={i}> {regio.name.official}</Box>))}
+             {/* {regions.map((regio, i) => (
+              <Box key={i}> {regio.name.official}</Box>))} */}
            
               </Typography> 
         </Box>
