@@ -7,27 +7,41 @@ import { async } from "@firebase/util";
 
 function Favorite({ country }) {
   const [isFavorite, setIsFavorite] = useState(false);
-  const [countryName, setCountryName] = useState(country.name.official);
-  const [countryCapital, setCountryCapital] = useState(country.capital);
-
+    // const [countryName, setCountryName] = useState(country.name.official);
+    // const [countryCapital, setCountryCapital] = useState(country.capital);
+console.log(country);
   return (
     <div>
-      <Button
-        sx={{ color: "#A7C7E7" }}
-        onClick={async () => {
-          await addCountry(countryName, countryCapital);
-          setIsFavorite((oldValue) => !oldValue);
-        }}
-      >
-        {isFavorite ? <PushPinIcon /> : <PushPinOutlinedIcon />}
-      </Button>
+      {isFavorite ? (
+        <Button
+          sx={{ color: "#A7C7E7" }}
+          onClick={() => {
+            //     async () => {
+            //   await addCountry(countryName, countryCapital);
+            setIsFavorite((oldValue) => !oldValue);
+          }}
+        >
+          {" "}
+          <PushPinIcon />{" "}
+        </Button>
+      ) : (
+        <Button
+          onClick={() => {
+            setIsFavorite((oldValue) => !oldValue);
+          }}
+        >
+          <PushPinOutlinedIcon />
+        </Button>
+      )}
 
       <Button
-      onClick={async () => {
-        await deleteCountry()
-      }}
-      
-      variant="outline">Remove from favorite</Button>
+        onClick={async () => {
+          await deleteCountry();
+        }}
+        variant='outline'
+      >
+        Remove from favorite
+      </Button>
     </div>
   );
 }
