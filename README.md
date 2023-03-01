@@ -1,31 +1,24 @@
 # Introduction 
 
+While I study Geography with my son I realize that an app with various data could enhance his interest in countries. The name of the project emphasizes that behind a name of a country contains many aspects. Throughout this application you can arrange, filter the countries by population. You are also able to search the official name of a country. Filter the countries by region to get closer to your “neighbors”. Click the “Show more” button to get more details. Click on the name of the country to dive into the data.
+
+My future plan is to add, read and delete favorite countries to your personal page using firebase. The first steps available in the [auth](https://github.com/gyulaidavid/country/tree/auth) branch.
+
 I arrived at the IT-field after a career change. ([LinkedIn](https://www.linkedin.com/in/gyulaidavid "LinkedIn")) This is *my first Pet project*, which I am constantly developing. The project contains HTML, CSS, JS and React. I am learning to structure my components and also focusing on clean coding. On the other hand, my intention was to implement the most popular approaches and best practices.
 
-Throughout this application you can arrange, filter the countries. You are able to search the official name of a country and also filter by population. Click the “Show more” button to get more details.
+## Features
 
-## Under construction :thinking: :
-This application is not ready yet. I am working on it continuously. 
-I would like to add:
-- Firebase authentication, database
-- React Router (favorite page)
-- Detailed page of the countries
-- Saving/appearing favorite items after login. 
-
-## Key Topics
-Framework: React
-
-#### HTML and CSS:
-I utilize Flexbox to present the usage of it.
-
-#### React:
-Usage of Hooks and functions (map, filter, sort).
-
-#### Material UI:
-Site building and formatting.
-
-
-
+ - [x] API connection
+ - [x] Router with sub pages
+ - [x] Individual country detail page (available, but need some formatting)
+ - [x] Firebase connection ([auth](https://github.com/gyulaidavid/country/tree/auth) branch.)
+ - [ ] Add data
+ - [ ] Read data
+ - [ ] Delete data
+ - [ ] Authentication
+ - [ ] Personal page with selected items (countries)
+ 
+ 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
