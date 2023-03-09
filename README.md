@@ -1,10 +1,9 @@
 # Introduction 
 
-While I study Geography with my son I realize that an app with various data could enhance his interest in countries. The name of the project emphasizes that behind a name of a country contains many aspects. Throughout this application you can arrange, filter the countries by population. You are also able to search the official name of a country. Filter the countries by region to get closer to your “neighbors”. Click the “Show more” button to get more details. Click on the name of the country to dive into the data.
+While I study Geography with my son, I realize that an app with various data could enhance his interest in countries. The project's name emphasizes that behind a name of a country contains many aspects. Throughout this application you can arrange, filter the countries by population. You are also able to search the official name of a country. Filter the countries by region to get closer to your “neighbors”. Click the “Show more” button to get more details. Click on the name of the country to dive into the data. My future plan is to add, read and delete favorite countries to your personal page using firebase. The first steps available in the auth branch.
 
-My future plan is to add, read and delete favorite countries to your personal page using firebase. The first steps available in the [auth](https://github.com/gyulaidavid/country/tree/auth) branch.
+I arrived at the IT-field after a career change. (LinkedIn) This is my first Pet project, which I am constantly developing. The project contains HTML, CSS, JS and React. I am learning to structure my components and also focusing on clean coding. On the other hand, my intention was to implement the most popular approaches and best practices.
 
-I arrived at the IT-field after a career change. ([LinkedIn](https://www.linkedin.com/in/gyulaidavid "LinkedIn")) This is *my first Pet project*, which I am constantly developing. The project contains HTML, CSS, JS and React. I am learning to structure my components and also focusing on clean coding. On the other hand, my intention was to implement the most popular approaches and best practices.
 
 ## Features
 
