@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Paper, Box, Container, Grid, Item } from "@mui/material";
+import { Typography, Paper, Box, Container, Grid, Link } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -46,12 +46,16 @@ function Footer() {
             </Grid>
             <Grid item xs={1}>
               <Typography>
-                <GitHubIcon />
+              <Link sx={{color: 'black'}} href="https://github.com/gyulaidavid/country"target="_blank"><GitHubIcon /></Link>
+                
               </Typography>
             </Grid>
             <Grid item xs={1}>
               <Typography>
-                <LinkedInIcon />
+                
+                <Link sx={{color: 'black'}} href="https://www.linkedin.com/in/gyulaidavid/" target="_blank"><LinkedInIcon /></Link>
+
+
               </Typography>
             </Grid>
           </Grid>
