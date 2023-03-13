@@ -81,15 +81,6 @@ console.log();
                 </Modal>
               </Box>
                    
-
-              <iframe
-                http-equiv='X-Frame-Options'
-                content='CROSSORIGIN'
-                src={filterCountry.maps.googleMaps}
-                height={400}
-                width={400}
-                title='map'
-              ></iframe>
             </div>
           ))}
       </Box>
