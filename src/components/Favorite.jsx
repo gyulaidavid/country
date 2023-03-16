@@ -10,7 +10,7 @@ function Favorite() {
   return (
     <div>
       <Button
-        sx={{ color: "#A7C7E7" }}
+        // sx={{ color: "#A7C7E7" }}
         onClick={ () => {
           
           setIsFavorite((oldValue) => !oldValue);

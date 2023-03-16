@@ -31,7 +31,7 @@ function Country({ country }) {
             <Typography variant='h4'> {country.name.official}</Typography>
          
           </Button>
-          <Favorite country={country}/>
+          <Favorite country={country} sx={{ color: "#A7C7E7" }}/>
         </Box>
 
         <Typography sx={{ mb: 1 }} variant='h6'>
@@ -63,9 +63,9 @@ function Country({ country }) {
             </Typography>
           </Box>
           <Box sx={{ boxShadow: 3, p: 1, m: 1 }}>
-            <div>
+           
               <img src={country.flags.png} alt='{country.name.official}' />
-            </div>
+            
           </Box>
 
           
