@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Favorite from "../components/Favorite";
 import {
@@ -11,8 +11,7 @@ import {
   Card,
   CardContent,
   CardMedia,
-  CardActionArea,
-  CardActions,
+    CardActions,
 } from "@mui/material";
 
 const style = {
@@ -102,7 +101,7 @@ function Countrydetails({ countries }) {
                           <img
                             height={200}
                             src={filterCountry.coatOfArms.png}
-                            alt='Click to enlarge image'
+                            alt={filterCountry.name.official}
                           />
                         </Tooltip>
                       </Button>
