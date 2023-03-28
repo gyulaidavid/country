@@ -4,15 +4,22 @@ import Populationslider from "../components/Populationslider";
 import LoadingMask from "../components/LoadingMask";
 import Country from "../components/Country";
 import Selectregion from "../components/Selectregion";
+import Regio from "../components/Regio";
 
-function Main({
-  setCountriesToRender,
-  countries,
-  countriesToRender,
-  regions
-}) {
+function Main({ setCountriesToRender, countries, countriesToRender, regions }) {
   const [filter, setFilter] = useState("");
   const [sortBy, setSortBy] = useState("asc");
+
+  const [loading, setLoading] = useState(false);
+
+
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
 
   useEffect(() => {
     sortBy === "asc"
@@ -77,18 +84,17 @@ function Main({
           </Box>
 
           <Box sx={{ mx: "auto" }}>
-            <Selectregion />
+            <Selectregion
+              setCountriesToRender={setCountriesToRender}
+              countriesToRender={countriesToRender}
+            />
           </Box>
         </div>
 
-        {/* Right side content with countries START */}
+        {/* Right side content with countries START  |||| <Typography variant='h4'>Please, Choose Other Values.</Typography> :*/}
 
         <div className='right'>
-          {!countriesToRender ? (
-            <LoadingMask countries={countries} />
-          ) : countriesToRender.length === 0 ? (
-            <Typography variant='h4'>Please, Choose Other Values.</Typography>
-          ) : countriesToRender ? (
+          {countriesToRender.length > 0  ? (
             countriesToRender
               .filter((country) =>
                 country.name.official
@@ -97,8 +103,10 @@ function Main({
               )
 
               .map((country, i) => <Country country={country} key={i} />)
-          ) : (<Selectregion/>)
+          ) : <LoadingMask/>
+                    
           }
+
         </div>
       </div>
     </>

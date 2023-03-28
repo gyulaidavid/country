@@ -1,14 +1,18 @@
-import React from 'react'
-import { Box, CircularProgress} from '@mui/material/'
+import React, { useEffect, useState } from "react";
+import { Box, CircularProgress } from "@mui/material/";
 
 function LoadingMask() {
+
+
+
+
   return (
-    <Box >
-    Loading
-    <br />
-    <CircularProgress />
-  </Box>
-  )
+
+
+    <Box>
+      <CircularProgress />
+    </Box>
+  );
 }
 
-export default LoadingMask
+export default LoadingMask;

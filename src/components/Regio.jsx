@@ -1,12 +1,12 @@
 import React from 'react'
 
-function Regio({regions}) {
+function Regio({filterRegions}) {
 
-console.log(regions);
+console.log(filterRegions);
     return (
 
 <>
-{regions.map((regio, i) => {
+{filterRegions.map((regio, i) => {
     <div key={i}>
 <div>{regio.name.official}</div>
 

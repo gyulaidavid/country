@@ -11,7 +11,7 @@ import {
   Card,
   CardContent,
   CardMedia,
-    CardActions,
+  CardActions,
 } from "@mui/material";
 
 const style = {
@@ -59,13 +59,19 @@ function Countrydetails({ countries }) {
           .filter((filterCountry) => filterCountry.name.official === id)
           .map((filterCountry, i) => (
             <div key={i}>
-              <Card sx={{ maxWidth: 500, boxShadow: 10, p: 2, backgroundColor: "#78A2CC"}}>
+              <Card
+                sx={{
+                  maxWidth: 500,
+                  boxShadow: 10,
+                  p: 2,
+                  backgroundColor: "#78A2CC",
+                }}
+              >
                 <CardMedia
                   component='img'
                   height='100%'
                   image={filterCountry.flags.png}
                   alt={filterCountry.name.official}
-                  
                 />
 
                 <CardContent
@@ -74,14 +80,11 @@ function Countrydetails({ countries }) {
                     flexDirection: "column",
                     alignItems: "center",
                     justifyContent: "center",
-                    backgroundColor: 'white'
+                    backgroundColor: "white",
                   }}
                 >
-                  <Typography
-                    variant='h3'
-                    sx={{ pb: 2 }}
-                  >
-                    {filterCountry.name.official} 
+                  <Typography variant='h3' sx={{ pb: 2 }}>
+                    {filterCountry.name.official}
                   </Typography>
 
                   <Typography variant='h4' sx={{ pb: 2 }}>
@@ -91,7 +94,6 @@ function Countrydetails({ countries }) {
                   {/* Coat-of-arms Start */}
 
                   <Box>
-                    
                     {filterCountry.coatOfArms.hasOwnProperty("png") ? (
                       <Button onClick={handleOpen}>
                         <Tooltip
@@ -142,10 +144,9 @@ function Countrydetails({ countries }) {
                     Population: {formatNumber(filterCountry.population)}
                   </Typography>
                   <CardActions>
-                <Favorite />
-                </CardActions>
+                    <Favorite />
+                  </CardActions>
                 </CardContent>
-                
               </Card>
             </div>
           ))}

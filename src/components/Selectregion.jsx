@@ -1,32 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Box, InputLabel, MenuItem, FormControl, Select } from "@mui/material";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import Modal from "@mui/material/Modal";
+import Regio from "./Regio";
 
-const style = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
 
-function Selectregion() {
+
+function Selectregion({setCountriesToRender, countriesToRender}) {
   const [regions, setRegions] = useState([]);
   const [selectedRegion, setSelectedRegion] = useState("");
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+ 
+console.log(countriesToRender);
 
   const handleChange = (event) => {
     setSelectedRegion(event.target.value);
-    handleOpen()
+   
   };
+
+
+  
+  // countriesToRender.filter((filterRegion) => filterRegion.region.america.map((region, i) => <Regio region={region} key={i}/> ))
 
   useEffect(() => {
     fetch(`https://restcountries.com/v3.1/region/${selectedRegion}`)
@@ -57,22 +48,7 @@ function Selectregion() {
         </FormControl>
       </Box>
 
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby='modal-modal-title'
-        aria-describedby='modal-modal-description'
-        >
-         
-        <Box sx={style}>
-          <Typography variant="h5">{selectedRegion}</Typography>
-          <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-             {/* {regions.map((regio, i) => (
-              <Box key={i}> {regio.name.official}</Box>))} */}
-           
-              </Typography> 
-        </Box>
-      </Modal>
+     
     </>
   );
 }

@@ -6,7 +6,11 @@ function Populationslider({
   countries,
   setCountriesToRender,
   countriesToRender,
-}) {
+})
+
+
+{
+
   const [population, setPopulation] = useState([0, 1402112000]);
 
   function formatNumber(num) {
@@ -46,7 +50,7 @@ function Populationslider({
           Maximum population: {formatNumber(maxPop)}
         </Typography>
         <Typography >
-          Listed countries: {countriesToRender.length}
+          Listed countries: {countriesToRender.length > 0 ? countriesToRender.length : <Typography variant='h4'>Please, Choose Other Values.</Typography>}
         </Typography>
       </Box>
     </>
